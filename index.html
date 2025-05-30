@@ -82,23 +82,29 @@
             transition: background-color 0.3s ease, border-color 0.3s ease;
         }
         .logo-signature-svg { 
-            height: 2.5rem; 
+            height: 1.8rem; /* Adjusted for new SVG aspect ratio */
             width: auto; 
-            max-width: 80px; 
+            max-width: 120px; /* Prevent it from becoming too wide if viewBox is very wide */
             color: var(--theme-signature-color);
             transition: color 0.3s ease;
         }
+        /* Ensure paths and circles within the user's SVG inherit color for theming */
         .logo-signature-svg path, 
         .logo-signature-svg circle {
-             stroke: currentColor !important; 
-             fill: currentColor !important;   
+             stroke: currentColor !important; /* Override inline stroke if present */
+             fill: currentColor !important;   /* Override inline fill if present */
         }
+        /* If some paths are meant to be only strokes (no fill) */
         .logo-signature-svg path[fill="none"] {
             fill: none !important;
         }
+         /* If some circles are meant to be only strokes */
          .logo-signature-svg circle[fill="none"] {
             fill: none !important;
         }
+        /* If some circles have a specific non-theme color, they should be set in the SVG itself */
+        /* For example, if your SVG has <circle fill="black"> and you want it to stay black */
+        /* then you don't need to override it here. currentColor is for theme-adaptive parts. */
 
 
         .logo-signature-svg:hover {
@@ -396,6 +402,7 @@
             border-radius: 0.75rem;
             padding: 1.5rem;
             transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+            text-align: center; 
         }
         .certificate-item:hover {
             background-color: rgba(var(--theme-accent-r), var(--theme-accent-g), var(--theme-accent-b), 0.04);
@@ -422,6 +429,19 @@
             font-family: 'Inter', sans-serif;
             font-size: 0.9rem;
             color: var(--theme-text-secondary);
+            margin-bottom: 1rem; 
+        }
+        .certificate-image-link {
+            display: inline-block; 
+            margin-top: 0.5rem;
+        }
+        .certificate-image-link img {
+            max-width: 100%;
+            height: auto;
+            max-height: 200px; 
+            border: 1px solid var(--theme-border-subtle);
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
 
@@ -545,10 +565,10 @@
         <div class="container-custom px-6 py-3.5"> 
             <div class="flex items-center justify-between">
                 <a href="#hero" class="logo-signature-link">
-                    <svg class="logo-signature-svg" viewBox="0 0 40 50" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M 314.168,20.795 C 333.903,17.129 333.842,17.624 353.750,15.844" 
-                              stroke="currentColor" stroke-width="3" fill="none" 
-                              stroke-linecap="round" stroke-linejoin="round"/>
+
+                        <svg class="logo-signature-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="42.95988082885742 10.843999862670898 315.7901306152344 135.7010726928711" width="465.42024222602043" height="200"><path d="M 89.613,36.788 C 89.708,42.311 89.613,42.310 89.613,47.831" stroke-width="5.338" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 89.613,47.831 C 89.483,53.356 89.518,53.354 89.233,58.874" stroke-width="3.751" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 89.233,58.874 C 89.036,61.730 89.103,61.733 88.852,64.586" stroke-width="4.060" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 88.852,64.586 C 88.570,67.630 88.656,67.632 88.471,70.679" stroke-width="4.157" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 88.471,70.679 C 88.639,73.544 88.379,73.532 88.471,76.391" stroke-width="4.149" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 88.471,76.391 C 88.063,80.006 88.258,80.017 87.710,83.626" stroke-width="4.000" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 87.710,83.626 C 87.426,87.827 87.302,87.812 86.949,92.003" stroke-width="3.972" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 86.949,92.003 C 86.454,94.466 86.665,94.490 86.188,96.954" stroke-width="4.296" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 86.188,96.954 C 86.185,99.835 85.883,99.797 85.807,102.666" stroke-width="4.188" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 85.807,102.666 C 85.171,105.510 85.423,105.546 84.665,108.378" stroke-width="4.269" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 84.665,108.378 C 84.473,112.097 84.029,111.984 83.523,115.613" stroke-width="4.162" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 83.523,115.613 C 82.206,119.046 82.570,119.142 80.859,122.467" stroke-width="3.941" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 80.859,122.467 C 79.824,125.370 79.733,125.329 78.576,128.179" stroke-width="4.026" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 78.576,128.179 C 77.830,130.741 77.540,130.511 76.292,132.749" stroke-width="4.189" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 76.292,132.749 C 73.685,137.263 73.453,136.453 69.822,139.603" stroke-width="4.297" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 69.822,139.603 C 65.826,141.507 66.454,141.642 61.829,141.507" stroke-width="4.440" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 61.829,141.507 C 57.471,141.245 57.833,141.507 53.837,139.603" stroke-width="4.484" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 53.837,139.603 C 51.126,138.368 51.571,138.579 50.031,136.176" stroke-width="4.370" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 50.031,136.176 C 48.303,132.222 48.272,132.656 48.128,128.179" stroke-width="4.462" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 48.128,128.179 C 47.765,123.067 47.923,123.463 49.269,118.659" stroke-width="4.368" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 49.269,118.659 C 50.904,115.119 50.429,115.260 53.456,112.566" stroke-width="4.573" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 139.853,55.066 C 136.316,57.399 136.427,57.541 133.002,60.017" stroke-width="5.292" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 133.002,60.017 C 129.175,63.229 129.084,63.111 125.390,66.490" stroke-width="3.933" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 125.390,66.490 C 122.385,69.203 122.324,69.132 119.300,71.821" stroke-width="3.847" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 119.300,71.821 C 116.201,74.673 116.105,74.534 112.830,77.153" stroke-width="3.736" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 112.830,77.153 C 109.687,79.408 109.731,79.432 106.360,81.341" stroke-width="3.876" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 106.360,81.341 C 103.728,82.742 103.788,82.835 101.031,84.007" stroke-width="4.029" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 101.031,84.007 C 94.840,85.295 97.638,85.598 94.180,87.053" stroke-width="4.402" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 94.180,87.053 C 96.878,88.151 93.698,88.341 98.748,90.099" stroke-width="5.102" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 98.748,90.099 C 101.067,93.312 101.445,92.911 103.315,96.573" stroke-width="4.692" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 103.315,96.573 C 104.880,98.830 104.873,98.833 106.360,101.142" stroke-width="4.327" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 106.360,101.142 C 108.109,103.500 107.925,103.590 109.404,106.093" stroke-width="4.232" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 109.404,106.093 C 111.046,110.123 111.344,109.974 112.830,114.090" stroke-width="4.402" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 112.830,114.090 C 114.557,117.700 114.471,117.739 116.255,121.324" stroke-width="4.489" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 116.255,121.324 C 116.778,124.338 117.412,123.793 118.539,126.275" stroke-width="4.721" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 118.539,126.275 C 121.021,129.535 120.584,128.526 123.867,129.702" stroke-width="4.908" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 123.867,129.702 C 128.193,129.119 127.491,129.915 131.479,127.036" stroke-width="4.863" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 131.479,127.036 C 133.573,124.885 133.902,125.501 135.285,122.467" stroke-width="4.795" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 135.285,122.467 C 136.769,120.259 136.808,120.316 137.949,117.897" stroke-width="4.832" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 137.949,117.897 C 139.350,112.566 139.243,115.308 140.233,112.566" stroke-width="4.983" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 140.233,112.566 C 140.628,115.282 141.063,112.566 141.375,117.897" stroke-width="5.286" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 141.375,117.897 C 141.472,121.522 142.150,120.613 143.278,123.228" stroke-width="4.937" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 143.278,123.228 C 145.884,124.907 144.898,124.759 148.226,124.371" stroke-width="5.054" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 148.226,124.371 C 152.536,122.489 152.544,123.383 156.599,120.182" stroke-width="4.564" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 156.599,120.182 C 159.619,118.488 159.577,118.491 162.308,116.374" stroke-width="4.160" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 162.308,116.374 C 164.384,113.242 164.947,114.300 167.256,111.805" stroke-width="4.505" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 167.256,111.805 C 170.847,110.034 169.712,110.576 172.965,111.043" stroke-width="5.047" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 172.965,111.043 C 173.597,113.777 174.843,111.938 175.249,115.613" stroke-width="5.080" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 175.249,115.613 C 177.300,118.006 177.023,117.585 179.816,118.659" stroke-width="5.079" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 179.816,118.659 C 182.779,118.965 182.438,119.339 185.525,118.278" stroke-width="4.876" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 185.525,118.278 C 189.436,116.433 189.630,117.252 193.517,115.232" stroke-width="4.582" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 193.517,115.232 C 196.559,113.562 195.906,114.529 198.465,114.470" stroke-width="5.068" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 198.465,114.470 C 199.943,116.786 200.556,115.466 201.510,119.040" stroke-width="5.326" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 201.510,119.040 C 202.648,123.433 202.988,121.165 204.555,123.228" stroke-width="5.487" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 204.555,123.228 C 208.692,120.925 207.976,122.862 212.167,117.897" stroke-width="5.504" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 212.167,117.897 C 214.458,115.566 214.591,115.785 216.353,112.947" stroke-width="4.417" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 216.353,112.947 C 218.085,109.779 218.454,110.045 220.160,106.855" stroke-width="4.132" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 220.160,106.855 C 222.684,104.163 222.272,103.877 224.727,101.142" stroke-width="3.991" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 224.727,101.142 C 227.091,97.655 227.061,97.690 228.913,93.907" stroke-width="3.834" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 228.913,93.907 C 230.101,90.418 230.516,90.610 231.577,87.053" stroke-width="3.848" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 231.577,87.053 C 233.765,82.716 233.526,82.611 235.764,78.295" stroke-width="3.657" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 235.764,78.295 C 237.263,74.667 237.381,74.720 238.809,71.060" stroke-width="3.789" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 238.809,71.060 C 239.989,67.936 240.118,68.004 241.473,64.967" stroke-width="3.916" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 241.473,64.967 C 242.688,62.607 242.654,62.605 244.137,60.397" stroke-width="4.171" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 244.137,60.397 C 246.914,56.663 246.684,56.514 249.466,52.782" stroke-width="4.321" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 249.466,52.782 C 251.997,49.549 251.671,49.428 253.652,45.927" stroke-width="4.496" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 253.652,45.927 C 256.250,42.233 255.042,42.885 255.555,39.454" stroke-width="4.837" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 255.555,39.454 C 253.265,37.367 254.918,36.902 250.988,35.265" stroke-width="5.304" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 250.988,35.265 C 248.748,32.104 248.317,32.798 245.660,30.315" stroke-width="5.013" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 245.660,30.315 C 241.211,28.175 241.517,27.915 236.525,26.888" stroke-width="4.500" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 236.525,26.888 C 231.427,25.581 231.506,25.509 226.249,24.984" stroke-width="4.438" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 226.249,24.984 C 221.493,24.691 221.531,24.439 216.734,24.603" stroke-width="3.931" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 216.734,24.603 C 211.207,24.370 211.217,24.500 205.696,24.603" stroke-width="3.489" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 205.696,24.603 C 197.674,24.889 197.696,24.941 189.711,25.745" stroke-width="2.984" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 189.711,25.745 C 179.988,26.957 179.976,26.793 170.301,28.411" stroke-width="2.650" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 170.301,28.411 C 160.959,29.838 160.958,29.813 151.651,31.457" stroke-width="2.600" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 151.651,31.457 C 143.450,32.891 143.451,32.884 135.285,34.503" stroke-width="2.765" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 135.285,34.503 C 128.927,35.556 128.988,35.747 122.725,37.169" stroke-width="3.005" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 122.725,37.169 C 119.394,38.085 119.411,38.031 116.255,39.454" stroke-width="3.643" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 116.255,39.454 C 111.974,41.380 111.972,41.322 107.882,43.642" stroke-width="3.683" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 107.882,43.642 C 103.789,44.822 104.743,45.378 101.792,47.451" stroke-width="4.292" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 101.792,47.451 C 99.291,51.273 100.173,49.582 100.651,53.162" stroke-width="4.866" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 100.651,53.162 C 104.402,56.073 102.717,56.033 108.643,56.970" stroke-width="4.615" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 108.643,56.970 C 114.584,57.949 114.298,58.167 120.442,57.351" stroke-width="3.625" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 120.442,57.351 C 142.577,54.682 142.558,55.093 164.592,51.259" stroke-width="1.875" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 164.592,51.259 C 179.299,48.866 179.305,48.970 193.898,45.927" stroke-width="2.039" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 193.898,45.927 C 212.327,41.784 212.411,42.202 230.816,37.930" stroke-width="1.769" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 230.816,37.930 C 258.044,32.479 257.999,32.264 285.242,26.888" stroke-width="1.427" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 285.242,26.888 C 299.588,23.145 299.719,23.911 314.168,20.795" stroke-width="1.771" stroke="black" fill="none" stroke-linecap="round"></path><path d="M 314.168,20.795 C 333.903,17.129 333.842,17.624 353.750,15.844" stroke-width="1.655" stroke="black" fill="none" stroke-linecap="round"></path>
+                        <circle r="1.5" cx="335.100830078125" cy="150.264892578125" fill="currentColor"></circle>
+                        <circle r="1.5" cx="364.7879638671875" cy="144.93377685546875" fill="currentColor"></circle>
                     </svg>
                 </a>
                 <div class="flex items-center space-x-5 md:space-x-7">
@@ -558,8 +578,7 @@
                         <a href="#skills" class="nav-link">Skills</a>
                         <a href="#projects" class="nav-link">Projects</a>
                         <a href="#experience" class="nav-link">Experience</a>
-                        <a href="#certificates" class="nav-link">Certificates</a>
-                        <a href="#contact" class="nav-link">Contact</a>
+                        <a href="#certificates" class="nav-link">Certificates</a> <a href="#contact" class="nav-link">Contact</a>
                     </nav>
                     <button id="themeToggle" class="theme-toggle-button" aria-label="Toggle theme">
                         <svg class="theme-toggle-icon sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.106a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5h2.25a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18.75a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-1.5a.75.75 0 0 1 .75-.75ZM5.106 17.834a.75.75 0 0 0 1.06 1.06l1.591-1.59a.75.75 0 0 0-1.06-1.061l-1.591 1.59ZM6.25 12a.75.75 0 0 1-.75-.75V9a.75.75 0 0 1 1.5 0v2.25A.75.75 0 0 1 6.25 12ZM6.106 5.106a.75.75 0 0 0-1.06 1.06l1.59 1.591a.75.75 0 0 0 1.061-1.06l-1.59-1.591Z"/></svg>
@@ -591,7 +610,7 @@
                 <span class="hero-name-line1">KEERTHANA</span>
                 </div>
             <div class="hero-image-overlay">
-                <img src="https://i.ibb.co/BHLsLkdj/image.png" 
+                <img src="https://i.ibb.co/BHLsLkdj/image.png" 
                      alt="Keerthana Overlay"
                      onerror="this.onerror=null;this.src='https://placehold.co/300x300/172532/e2e8f0?text=Profile';"
                      >
@@ -751,16 +770,22 @@
             <p class="section-subtitle animate-scroll-reveal" style="transition-delay: 0.05s;">Recognized achievements in continuous learning.</p>
             <div class="grid md:grid-cols-2 gap-6 mt-12 staggered-appear-villo">
                 <div class="certificate-item animate-scroll-reveal">
-                    <h3 class="certificate-title">
-                        <a href="https://i.ibb.co/0pYvtQX7/image.png" target="_blank" rel="noopener noreferrer" title="View Certificate">
-                            Certificate in Digital Marketing
-                        </a>
-                    </h3>
+                    <h3 class="certificate-title">Certificate in Digital Marketing</h3>
                     <p class="certificate-platform">Infosys</p>
+                    <div class="certificate-image-container">
+                        <a href="https://i.ibb.co/0pYvtQX7/image.png" target="_blank" rel="noopener noreferrer">
+                            <img src="https://i.ibb.co/0pYvtQX7/image.png" alt="Infosys Digital Marketing Certificate" 
+                                 onerror="this.onerror=null;this.src='https://placehold.co/800x600/ec4899/ffffff?text=Certificate+Preview'; this.alt='Certificate Preview Not Available';"
+                                 class="rounded-md">
+                        </a>
+                    </div>
                 </div>
                 <div class="certificate-item animate-scroll-reveal">
                     <h3 class="certificate-title">Future: Udemy & LinkedIn Courses</h3>
                     <p class="certificate-platform">Planning to pursue further specializations.</p>
+                     <div class="certificate-image-container mt-4 opacity-50"> 
+                        <img src="https://placehold.co/800x600/cccccc/999999?text=Future+Certificate" alt="Future Certificate Placeholder" class="rounded-md">
+                    </div>
                 </div>
             </div>
         </div>
@@ -800,8 +825,10 @@
             <p class="mb-1">&copy; <span id="currentYear"></span> Keerthana. All Rights Reserved.</p>
             <p>Designed and Developed by <a href="https://www.instagram.com/jj16o7/" target="_blank" rel="noopener noreferrer" class="footer-link">intsa/jj16o7</a></p>
             <p class="mt-2">
-
-                
+                Connect: 
+                <a href="#" class="footer-link">LinkedIn</a> / 
+                <a href="#" class="footer-link">Instagram</a> 
+                (update links)
             </p>
         </div>
     </footer>
@@ -816,10 +843,8 @@
         function applyTheme(theme) {
             if (theme === 'dark') {
                 htmlElement.classList.add('dark-theme');
-                // htmlElement.style.setProperty('--theme-accent-rgb-for-hover', '212, 175, 55'); // Gold RGB
             } else {
                 htmlElement.classList.remove('dark-theme');
-                // htmlElement.style.setProperty('--theme-accent-rgb-for-hover', '236, 72, 153'); // Pink RGB
             }
         }
         
